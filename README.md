@@ -36,7 +36,7 @@ Example Playbook
       hosts: vector
       become: true
       roles:
-        - vector-role
+        - vector
       tags: vector
 ```
 

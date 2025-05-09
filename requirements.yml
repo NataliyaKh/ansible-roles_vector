@@ -2,4 +2,4 @@
   - src: git@github.com:NataliyaKh/ansible-roles_vector.git
     scm: git
     version: "v0.1"
-    name: vector-role
+    name: vector
