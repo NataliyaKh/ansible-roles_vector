@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Install Python3
+      ansible.builtin.package: 
+        name: python3.10
+        state: present
+        use: apt
+

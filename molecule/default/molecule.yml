@@ -1,17 +1,26 @@
 ---
+dependency:
+  name: galaxy
 driver:
   name: docker
 lint:
   ansible-lint .
   yamllint .
+role_name_check: 1
 platforms:
-  - name: centos_8
-    image: docker.io/pycontribs/centos:8
-    pre_build_image: true
+  #- name: oraclelinux_8
+   # image: docker.io/pycontribs/oraclelinux:8
+  #  pre_build_image: true
   - name: ubuntu
-    image: docker.io/pycontribs/ubuntu:latest
+    #image: ubuntu/python:3.12-24.04_stable
+    #image: docker.io/pycontribs/ubuntu:latest
+    image: ursamajorlab/noble-python:3.13
+    #image: brunneis/python:3.8.3-ubuntu-20.04
+    #image: ubuntu:latest
     pre_build_image: true
 provisioner:
   name: ansible
+  #env:
+    #ANSIBLE_REMOTE_TMP: /tmp
 verifier:
   name: ansible

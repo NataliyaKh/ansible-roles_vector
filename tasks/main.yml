@@ -1,28 +1,31 @@
 ---
-- name: Install Vector
-  hosts: vector
-  tags: vector
+#- name: Install systemd
+#  become: true
+#  raw: apt-get install --reinstall systemd
+- include_tasks: precheck.yml
+  tags: [always]
 
-  tasks:
-    - name: Get Vector distrib
-      ansible.builtin.get_url:
-        url: https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb
-        dest: ./vector-{{ vector_version }}-amd64.deb
-        mode: "0644"
+- name: Get Vector distrib
+  #become: true
+  ansible.builtin.get_url:
+    url: https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb
+    dest: ./vector-{{ vector_version }}-amd64.deb
+    mode: "0644"
 
-    - name: Install Vector packages
-      become: true
-      ansible.builtin.apt:
-        deb: ./vector-{{ vector_version }}-amd64.deb
-      notify:
-        - Start Vector service
+- name: Install Vector packages
+  #become: true
+      #become_user: ubuntu
+  ansible.builtin.apt:
+    deb: ./vector-{{ vector_version }}-amd64.deb
+  notify:
+    - Start Vector service
 
-    - name: Copy vector config
-      become: true
-      ansible.builtin.template:
-        src: templates/vector.yaml.j2
-        dest: /etc/vector/vector.yaml
-        mode: '0644'
-      notify:
-        - Start Vector service
+- name: Copy vector config
+  #become: true
+  ansible.builtin.template:
+    src: templates/vector.yaml.j2
+    dest: /etc/vector/vector.yaml
+    mode: '0644'
+  notify:
+    - Start Vector service
 
