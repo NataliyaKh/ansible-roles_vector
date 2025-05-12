@@ -3,6 +3,31 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Example assertion
+    - name: Check Vector config file
+      ansible.builtin.stat:
+        path: "/etc/vector/vector.yaml"
+      register: vector_conf
+    - name: Check Vector config file presence
       assert:
-        that: true
+        that:
+          - vector_conf.stat.exists == True
+        success_msg: "Vector config file exists"
+        fail_msg: "Vector config file absent"
+    - name: Vector config validating
+      ansible.builtin.command: "vector validate /etc/vector/vector.yaml --no-environment"
+      register: valid_result
+    - name: Check result of validating
+      assert:
+        that: valid_result.rc == 0
+        success_msg: "Vector config validated"
+        fail_msg: "Invalid Vector config"
+    - name: "Get process PID"
+      shell: >
+        echo -n
+        $(pgrep vector)
+      register: vector_pids
+    - name: Check running vector process
+      assert:
+        that: vector_pids.stdout != 0
+        success_msg: "Vector running"
+        fail_msg: "Vector not started"

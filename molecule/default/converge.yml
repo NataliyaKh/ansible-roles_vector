@@ -3,6 +3,6 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: "Include vector-role"
+    - name: "Include vector"
       include_role:
         name: "NataliyaKh.vector"

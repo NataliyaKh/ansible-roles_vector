@@ -2,8 +2,8 @@
 #- name: Install systemd
 #  become: true
 #  raw: apt-get install --reinstall systemd
-- include_tasks: precheck.yml
-  tags: [always]
+#- include_tasks: precheck.yml
+#  tags: [always]
 
 - name: Get Vector distrib
   #become: true
@@ -28,4 +28,3 @@
     mode: '0644'
   notify:
     - Start Vector service
-
