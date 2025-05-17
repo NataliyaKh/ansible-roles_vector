@@ -1,5 +1,5 @@
 ---
-  - src: git@github.com:NataliyaKh/ansible-roles_vector.git
+  - src: git@github.com:NataliyaKh/vector.git
     scm: git
     version: "v0.4"
     name: vector
