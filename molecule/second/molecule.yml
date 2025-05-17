@@ -2,9 +2,6 @@
 driver:
   name: podman
 platforms:
-  - name: instance
-    image: quay.io/centos/centos:stream8
-    pre_build_image: true
   - name: ubuntu2204
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
