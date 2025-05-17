@@ -1,7 +1,5 @@
 ---
   - src: git@github.com:NataliyaKh/ansible-roles_vector.git
     scm: git
-    version: "v0.4"
+    version: "v0.1"
     name: vector
-    collections:
-      - name: containers.podman

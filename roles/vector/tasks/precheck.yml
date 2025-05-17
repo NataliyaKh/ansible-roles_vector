@@ -1,0 +1,4 @@
+- name: Install systemd
+  ansible.builtin.apt:
+    name: systemd
+    state: present
