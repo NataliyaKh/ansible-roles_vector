@@ -5,3 +5,9 @@
     name: vector
     collections:
       - name: containers.podman
+      - name: /tmp/molecule/community-docker-4.5.2.tar.gz
+        type: file
+      - name: /tmp/molecule/community-library_inventory_filtering_v1-1.0.2.tar.gz
+        type: file
+      - name: /tmp/molecule/ansible-posix-2.0.0.tar.gz
+        type: file
