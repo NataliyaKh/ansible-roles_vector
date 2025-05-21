@@ -5,3 +5,8 @@
     name: vector
     collections:
       - name: containers.podman
+      - name: community.general
+    dependency:
+      name: galaxy
+      options:
+        requirements-file: requirements.yml
