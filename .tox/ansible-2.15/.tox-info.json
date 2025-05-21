@@ -1,6 +1,18 @@
 {
   "ToxEnv": {
     "name": "ansible-2.15",
-    "type": "VirtualEnvRunner"
+    "type": "UvVenvRunner"
+  },
+  "Python": {
+    "version_info": [
+      3,
+      9,
+      null,
+      "",
+      0
+    ],
+    "seed": false,
+    "python_preference": "system",
+    "venv": "."
   }
 }

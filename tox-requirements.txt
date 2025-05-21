@@ -4,7 +4,7 @@ molecule
 molecule-plugins[docker]
 podman
 molecule_podman
-containers.podman
+# containers-podman
 jmespath
 ansible-core
-python3
+python
