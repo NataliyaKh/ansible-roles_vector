@@ -3,7 +3,7 @@ lxml
 molecule
 molecule-plugins[docker]
 podman
-molecule_podman
+molecule-podman
 # containers-podman
 jmespath
 ansible-core

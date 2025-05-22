@@ -1,5 +1,5 @@
 ---
-  - src: git@github.com:NataliyaKh/vector.git
+  - src: git@github.com:NataliyaKh/vector:latest
     scm: git
     version: "v0.5"
     name: vector
