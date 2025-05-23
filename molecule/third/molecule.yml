@@ -13,6 +13,12 @@ platforms:
     cgroupns_mode: host
     privileged: true
     pre_build_image: true
+provisioner:
+  name: ansible
+  env: 
+    ANSIBLE_ROLES_PATH: ../../..
+  playbooks:
+    prepare: prepare.yml
 scenario:
   test_sequence:
     - destroy

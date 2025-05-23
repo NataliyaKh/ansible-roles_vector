@@ -1,8 +1,9 @@
 ---
-  - src: git@github.com:NataliyaKh/vector:latest
+  - src: https://github.com/NataliyaKh/vector.git
     scm: git
-    version: "v0.5"
+    version: "v0.7"
     name: vector
+    force: true
     collections:
      # - name: containers.podman
       #  version: 1.7.0

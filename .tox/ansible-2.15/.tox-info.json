@@ -1,0 +1,6 @@
+{
+  "ToxEnv": {
+    "name": "ansible-2.15",
+    "type": "VirtualEnvRunner"
+  }
+}
