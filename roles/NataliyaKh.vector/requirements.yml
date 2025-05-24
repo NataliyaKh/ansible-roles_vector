@@ -1,0 +1,20 @@
+---
+  - src: git@github.com:NataliyaKh/vector:latest
+    scm: git
+    version: "v0.5"
+    name: vector
+    collections:
+     # - name: containers.podman
+      #  version: 1.7.0
+      - name: community.general
+      - name: ansible.posix
+        version: 1.7.0
+    # This version is the first one that enables use of synchronize
+    # module with with podman.
+    # https://galaxy.ansible.com/ansible/posix
+    #  - name: containers.podman
+    #    version: 1.7.0
+    dependency:
+      name: galaxy
+      options:
+        requirements-file: requirements.yml

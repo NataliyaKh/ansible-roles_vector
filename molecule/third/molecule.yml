@@ -1,6 +1,12 @@
 ---
 driver:
   name: docker
+role_name_check: 1
+dependency:
+  name: galaxy
+  options:
+    requirements-file: ../../requirements.yml
+    force: true
 platforms:
   # - name: instance
   #  image: quay.io/centos/centos:stream8
@@ -15,8 +21,11 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      roles_path: /home/vboxuser/git/ansible/vector/roles
   env: 
-    ANSIBLE_ROLES_PATH: ../../..
+    ANSIBLE_ROLES_PATH: /home/vboxuser/git/ansible/vector/roles
   playbooks:
     prepare: prepare.yml
 scenario:

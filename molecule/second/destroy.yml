@@ -1,0 +1,9 @@
+---
+- name: Destroy podman instances
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Remove podman containers
+      containers.podman.podman_container:
+        name: ubuntu2204
+        state: absent

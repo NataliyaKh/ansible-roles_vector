@@ -1,0 +1,9 @@
+selinux
+lxml
+molecule
+molecule-plugins[docker]
+podman
+molecule-podman
+# containers-podman
+jmespath
+ansible-core
